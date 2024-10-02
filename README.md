@@ -24,6 +24,7 @@ You'll need a system with:
 - Access to a 3D printer
 
 ## Making the displays
+![SageSlate Body](./images/sage_eink.png)
 Print the files found in stls
 - 2 x stands
 - 1 x lid
@@ -31,6 +32,8 @@ Print the files found in stls
 
 Place elements as seen below, the screen will then sit ontop of the 
 ![SageSlate Electronics](./images/electronics.JPG)
+
+Ignore the voltage split attempt (the resistor board) it doesn't work!
 
 Upload the code found in esp32 code folder, remeber to change the name of the Eink display to what ever number you'd like (eg EinkScreen0, EinkScreen1, EinkScreen2 etc)
 
@@ -41,11 +44,11 @@ Drop into the Linux CLI and navigate to the app code folder, once inside run `np
 
 Linking the ESP32 to a serial port via bluetooth can be pretty annoying so this step can take time, this is my condensed instructions (from https://medium.com/@18218004/devlog-6-bluetooth-and-esp32-ba076a8e207d)
 
-``sudo bluetoothctl
-[bluetooth]# power on
-[bluetooth]# agent on
-[bluetooth]# scan on
-``
+- ``sudo bluetoothctl``
+- `` [bluetooth]# power on ``
+- `` [bluetooth]# agent on ``
+- `` [bluetooth]# scan on ``
+
 Look out for the name of the ESP32, once you find it take it's mac address. We're gonna tell our machine that we trust this device.
 ``pair 24:6F:28:17:2D:4A``
 Then it will promt you asking if the digits are the same on your ESP32, now we have no way of seeing this but we can just say yes. Now that they are paired lets make them trust
@@ -53,6 +56,8 @@ Then it will promt you asking if the digits are the same on your ESP32, now we h
 This sould allow us to spawn terminals that use start up a serial port between us and the ESP32
 
 On the app naviagate to the character sheet tab, now press the button that correlates to the number eink screen that you names the ESP32. A terminal should pop up and tell you that you can "Ctrl-C to hang up" this means we have a serial port connection!
+
+![SageSlate UI](./images/UI.png)
 
 Now we can use the device, so let's try to send a image!
 
@@ -62,5 +67,7 @@ You'll need:
 - Use the scene found in obs_scene
 - Turn on websocket sever and have port 4499
 - Use find and replace to replace "/home/jp19050/Github/TTRPG/" with where ever you want to get images from (this will be changed in the future to allow for in app directory change)
+![SageSlate Battlemap](./images/sage_screen.png)
+
 
 
