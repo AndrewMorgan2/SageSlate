@@ -1,6 +1,11 @@
 ## SageSlate
 SageSlate Eink display used for TTRPGs, along with a custom battle tracker. This project is still actively being developed
 
+### Future Features
+- [ ] Change Directory for images to be displayed
+- [ ] Remove hard coded files path
+- [ ] Get controll functionality working (currently image-to-image generation doesn't work)
+
 ![SageSlate Diagram](./images/sageslate-diagram.png)
 
 ### Overview
