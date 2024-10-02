@@ -8,6 +8,7 @@ SageSlate consists of two main components:
 
 - Hardware: Custom e-ink displays designed for low power consumption and high readability.
 - Software: A Linux-based control system that manages the e-ink displays remotely via Bluetooth.
+
 The core concept of SageSlate is to provide a seamless, wireless way to control and update e-ink displays from a Linux machine. 
 
 ## Getting Started
