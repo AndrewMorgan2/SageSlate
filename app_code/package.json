@@ -1,0 +1,41 @@
+{
+  "name": "Behind-the-Screen",
+  "version": "0.0.1",
+  "description": "Gamemastering without the fuss",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "Andrew",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^30.1.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "axios": "^1.7.2",
+    "axois": "^0.0.1-security",
+    "form-data": "^4.0.0",
+    "fs": "^0.0.1-security",
+    "node": "^18.20.3",
+    "node-fetch": "^3.3.2"
+  },
+  "build": {
+    "appId": "your.app.id",
+    "files": [
+      "**/*"
+    ],
+    "mac": {
+      "icon": "assets/icons/icon.icns"
+    },
+    "win": {
+      "icon": "assets/icons/icon.ico"
+    },
+    "linux": {
+      "icon": "build/logo.png"
+    }
+  }
+}

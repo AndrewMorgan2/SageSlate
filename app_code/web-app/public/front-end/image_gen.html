@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Draw Pro</title>
+	<link rel="stylesheet" href="front-end/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+	<div class="title-bar">
+		<img src="front-end/logo.png" width="100vw" style="float: left;">
+		<h3 style="align-content: center;">Behind the Screen</h3>
+		<div class="window-controls">
+			<button id="Draw">Draw</button>
+			<button id="Generate">Generate</button>
+			<button id="Screen">Screen</button>
+			<button id="Combat">Combat</button>
+			<button id="Eink">Eink</button>
+			<button id="CharacterSheets">Character Sheets</button>
+		</div>
+	</div>
+	<script src="front-end/js/basics.js" type="text/javascript" charset="utf-8"></script>
+	<div class="controls">
+		<label for="apiKey">API Key:</label>
+		<input type="text" id="apiKey" placeholder="Enter your API key">
+		<button class="button" id="submitMoney">Credits?</button>
+		<h3 id="credit_text" style="display: inline-flex; color: #ccc;">Credits?</h3>
+	</div>
+	<div class="controls">
+		<label for="aiPrompt">AI Prompt:</label>
+		<input type="text" id="aiPrompt" placeholder="Enter AI prompt">
+	</div>
+	<!-- (((((Until we need this))))) <div class="controls">
+		<label for="aiNegativePrompt">AI Negative Prompt:</label>
+		<input type="text" id="aiNegativePrompt" placeholder="Enter AI negative prompt">
+	  </div> -->
+	<div class="controls">
+		<div class="custom-file-input">
+			<label for="imageSelector">Choose File</label>
+			<input type="file" id="imageSelector" accept="image/*">
+			<img id="imagePreview" style="display: none; max-width: 300px;">
+			<input type="hidden" id="imageData" name="imageData">
+		</div>
+		<div class="input-group">
+			<img id="imagePreview" alt="Selected Image Preview"
+				style="display: none; max-width: 100%; height: auto; border: 1px solid #ccc; margin-top: 20px;">
+		</div>
+	</div>
+	<div id="spinner"></div>
+	<div class="controls">
+		<button class="button" id="submitTextImage">Submit Text</button>
+		<button class="button" id="submitTurbo">Submit Turbo</button>
+		<button class="button" id="submitImageImage">Submit Control</button>
+	</div>
+	<div id="imageList"></div>
+	<script src="front-end/js/image_gen.js"></script>
+</body>
+
+</html>

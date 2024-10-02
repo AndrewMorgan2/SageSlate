@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Draw Pro</title>
+        <link rel="stylesheet" href="front-end/style.css" type="text/css" media="screen" title="no title"
+                charset="utf-8">
+</head>
+
+<body>
+        <div class="title-bar">
+                <img src="front-end/logo.png" width="100vw" style="float: left;">
+                <h3 style="align-content: center;">Behind the Screen</h3>
+                <div class="window-controls">
+                        <button id="Draw">Draw</button>
+                        <button id="Generate">Generate</button>
+                        <button id="Screen">Screen</button>
+                        <button id="Combat">Combat</button>
+                        <button id="Eink">Eink</button>
+                        <button id="CharacterSheets">Character Sheets</button>
+                </div>
+        </div>
+        <script src="front-end/js/basics.js" type="text/javascript" charset="utf-8"></script>
+        <div class="container">
+                <div class="left-content">
+                        <div style="display: block;" class="combat">
+                                <button id="startCombat" class="readCombat">StartCombat</button>
+                                <button id="endCombat" class="readCombat">End Combat</button>
+                                <button id="turnCombat" class="readCombat">Turn</button>
+                                <button id="updateCombat" class="readCombat">Update</button>
+                        </div>
+                        <div style="display: block;">
+                                <input type="number" id="amount" name="template" placeholder="0">
+                                <h4>Being hit:</h4>
+                                <select id="beingHit">
+                                </select>
+                                <h4>Hitting:</h4>
+                                <select id="hitting">
+                                </select>
+                                <button id="damage" class="readCombat">Damage</button>
+                        </div>
+                        <div style="display: block;">
+                                <input type="text" id="effect" name="template" placeholder="Blind">
+                                <input type="number" id="effect_length" name="template" placeholder="5 Turns">
+                                <h4>Effected:</h4>
+                                <select id="Effected">
+                                </select>
+                                <button id="effect_button" class="readCombat">Effect</button>
+                        </div>
+                        <div style="display: block;" class="directory-list">
+                                <h4 id="effects_text">Effects:</h4>
+                        </div>
+                        <div style="display: block;" class="directory-list">
+                                <h4 id="order_text">Order:</h4>
+                        </div>
+                        <div style="display: block;" class="directory-list">
+                                <h4 id="player_damage_text"></h4>
+                                <input type="text" id="player_damage_to_track" name="template" placeholder="">
+                        </div>
+                        <div style="display: block;" class="directory-list">
+                                <h4 id="turn_text">Turn:1</h4>
+                        </div>
+                        <div style="display: block;" class="directory-list">
+                                <h4 id="debug_text">Debug:</h4>
+                        </div>
+                        <button id="piechart" class="readCombat">Piechart</button>
+                </div>
+                <div class="right-content">
+                        <textarea id="combatText" rows="15" cols="20" placeholder="Enter your text here..."></textarea>
+                        <button id="readCombat" class="readCombat">Read</button>
+                </div>
+        </div>
+        <script src="front-end/js/screen.js"></script>
+
+</body>
+
+</html>

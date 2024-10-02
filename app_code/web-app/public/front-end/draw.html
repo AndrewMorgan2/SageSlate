@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Draw</title>
+	<link rel="stylesheet" href="front-end/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+	<div class="title-bar">
+		<img src="front-end/logo.png" width="100vw" style="float: left;">
+		<h3 style="align-content: center;">Behind the Screen</h3>
+		<div class="window-controls">
+			<button id="Draw">Draw</button>
+			<button id="Generate">Generate</button>
+			<button id="Screen">Screen</button>
+			<button id="Combat">Combat</button>
+			<button id="Eink">Eink</button>
+			<button id="CharacterSheets">Character Sheets</button>
+		</div>
+	</div>
+	<script src="front-end/js/basics.js" type="text/javascript" charset="utf-8"></script>
+	<div class="controls">
+		<ul>
+			<li class="black selected"></li>
+			<li class="white"></li>
+			<div style="display: inline-flex;">
+				<button class="button" id="saveImage" style="margin: auto; margin-left: 1%;">Save as .png</button>
+				<div class="custom-file-input">
+					<label for="fileInput">Choose File</label>
+					<input type="file" id="fileInput">
+				</div>
+			</div>
+			<input type="range" id="customSlider" min="10" max="50" value="10">
+		</ul>
+	</div>
+	<div>
+		<canvas class="picture" id="canvas" width="1920" height="1080"></canvas>
+	</div>
+	<div class="controls">
+
+	</div>
+	<script src="front-end/js/drawing.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

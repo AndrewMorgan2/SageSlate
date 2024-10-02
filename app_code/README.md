@@ -30,7 +30,7 @@ Print the files found in stls
 - 1 x body
 
 Place elements as seen below, the screen will then sit ontop of the 
-![SageSlate Electronics](./images/electronics.JPG)
+![SageSlate Diagram](./images/electronics.JPG)
 
 Upload the code found in esp32 code folder, remeber to change the name of the Eink display to what ever number you'd like (eg EinkScreen0, EinkScreen1, EinkScreen2 etc)
 
@@ -57,10 +57,4 @@ On the app naviagate to the character sheet tab, now press the button that corre
 Now we can use the device, so let's try to send a image!
 
 ## Custom Battlemaps
-You'll need:
-- OBS studios
-- Use the scene found in obs_scene
-- Turn on websocket sever and have port 4499
-- Use find and replace to replace "/home/jp19050/Github/TTRPG/" with where ever you want to get images from (this will be changed in the future to allow for in app directory change)
-
 

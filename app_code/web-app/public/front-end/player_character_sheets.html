@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Draw Pro</title>
+	<link rel="stylesheet" href="front-end/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+	<div class="title-bar">
+		<img src="front-end/logo.png" width="100vw" style="float: left;">
+		<h3 style="align-content: center;">Behind the Screen</h3>
+		<div class="window-controls">
+			<button id="Draw">Draw</button>
+			<button id="Generate">Generate</button>
+			<button id="Screen">Screen</button>
+			<button id="Combat">Combat</button>
+			<button id="Eink">Eink</button>
+			<button id="CharacterSheets">Character Sheets</button>
+		</div>
+	</div>
+	<script src="front-end/js/basics.js" type="text/javascript" charset="utf-8"></script>
+	<br />
+	<div class="controls">
+		<button class="pre_pc_gen_button" onclick="copyToClipboard()">Get Box</button>
+		<button class="pre_pc_gen_button" onclick="BTconnectScreen(0)">Connect 0</button>
+		<button class="pre_pc_gen_button" onclick="BTconnectScreen(1)">Connect 1</button>
+		<button class="pre_pc_gen_button" onclick="BTconnectScreen(2)">Connect 2</button>
+		<button class="pre_pc_gen_button" onclick="BTconnectScreen(3)">Connect 3</button>
+		<button class="pre_pc_gen_button" onclick="BTconnectScreen(4)">Connect 4</button>
+		<div id="playerEntries">
+			<!-- 4 Player entries -->
+			<div class="player-entry" id="player1">
+				<div class="entry-header">
+					<h2>Player: </h2>
+					<input type="text" id="PlayerName" name="PlayerName" placeholder="Guy" required>
+					<button class="collapse-btn">Expand</button>
+				</div>
+				<div class="entry-content">
+					<div class="container">
+						<div class="form-container">
+							<form class="playerCardForm" id="playerCardForm1">
+
+								<select id="template" name="template" required>
+									<option value="" disabled selected>Select a template</option>
+										<option value="./barbarain.png">Barbarain</option>
+										<option value="./bard.png">Bard</option>
+										<option value="./rogue.png">Rogue</option>
+										<option value="./cleric.png">Cleric</option>
+										<option value="./druid.png">Druid</option>
+										<option value="./fighter.png">Fighter</option>
+										<option value="./monk.png">Monk</option>
+										<option value="./paladin.png">Paladin</option>
+										<option value="./ranger.png">Ranger</option>
+										<option value="./sorcerer.png">Sorcerer</option>
+										<option value="./warlock.png">Warlock</option>
+										<option value="./wizard.png">Wizard</option>
+								</select>
+
+								<div class="pc_input_field">
+									<label for="name">Name</label>
+									<input type="text" id="name" name="name" placeholder="Thorin" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="race">Race</label>
+									<input type="text" id="race" name="race" placeholder="Dwarf" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="level">Level</label>
+									<input type="number" id="level" name="level" placeholder="25" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="Age">Age</label>
+									<input type="number" id="age" name="age" placeholder="125" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="maxMana">Max Mana</label>
+									<input type="number" id="maxMana" name="maxMana" placeholder="45" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="hpMax">HP Max</label>
+									<input type="number" id="hpMax" name="hpMax" placeholder="45" required>
+								</div>
+								<h3>Ability Scores</h3>
+
+								<div class="pc_input_field">
+									<label for="Str">Str</label>
+									<input type="number" id="str" name="ability1" placeholder="+3 +2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Dex">Dex</label>
+									<input type="number" id="dex" name="ability2" placeholder="+2 +1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Con">Con</label>
+									<input type="number" id="con" name="ability3" placeholder="+4 +2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Int">Intel</label>
+									<input type="number" id="int" name="ability4" placeholder="+1 +0" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Wis">Wis</label>
+									<input type="number" id="wis" name="ability5" placeholder="+2 +1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Cha">Cha</label>
+									<input type="number" id="cha" name="ability6" placeholder="+0 -1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="speed">speed</label>
+									<input type="number" id="speed" name="speed" placeholder="30" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="save">Spell Save DC</label>
+									<input type="text" id="save" name="save" placeholder="+3" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="prof_bonus">Prof Bonus</label>
+									<input type="number" id="prof_bonus" name="prof_bonus" placeholder="+3" required>
+								</div>
+								<h3>Combat</h3>
+								<div class="pc_input_field">
+									<label for="AC">AC</label>
+									<input type="number" id="ac" name="ac" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Magic ATT">Magic ATK</label>
+									<input type="number" id="magic_atk" name="magic_atk" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Main ATT">Main ATK</label>
+									<input type="number" id="mainAtt" name="attack1" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Main DMG">Main DMG</label>
+									<input type="text" id="mainDmg" name="damage1" placeholder="1d8+3" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Special1">Special1</label>
+									<input type="text" id="Special1" name="Special1" placeholder="+2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Special2">Special2</label>
+									<input type="text" id="Special2" name="Special2" placeholder="1d6+1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="hp">HP</label>
+									<input type="number" id="hp" name="hp" placeholder="150" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="mana">Mana</label>
+									<input type="number" id="mana" name="mana" placeholder="30" required>
+								</div>
+								<br />
+								<div class="pc_input_field">
+									<button type="button" onclick="generateCommand('player1')">Generate Command</button>
+									<button type="button" onclick="display('player1')">Display</button>
+									<select id="eink_selector" name="eink_selector" required>
+										<option value="">Select a eink</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="0">0</option>
+									</select>
+								</div>
+							</form>
+						</div>
+						<div class="image-container">
+							<img id="player1generatedImage" src="ttrpg/paladin.png" alt="Generated Player Card">
+							<h4 id="player1commandDisplay">current command</h4>
+							<h4 id="player1progessUpload">Not currently Uploading</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="player-entry" id="player2">
+				<div class="entry-header">
+					<h2>Player: </h2>
+					<input type="text" id="PlayerName" name="PlayerName" placeholder="Guy" required>
+					<button class="collapse-btn">Expand</button>
+				</div>
+				<div class="entry-content">
+					<div class="container">
+						<div class="form-container">
+							<form class="playerCardForm" id="playerCardForm2">
+								<select id="template" name="template" required>
+									<option value="" disabled selected>Select a template</option>
+										<option value="./barbarain.png">Barbarain</option>
+										<option value="./bard.png">Bard</option>
+										<option value="./rogue.png">Rogue</option>
+										<option value="./cleric.png">Cleric</option>
+										<option value="./druid.png">Druid</option>
+										<option value="./fighter.png">Fighter</option>
+										<option value="./monk.png">Monk</option>
+										<option value="./paladin.png">Paladin</option>
+										<option value="./ranger.png">Ranger</option>
+										<option value="./sorcerer.png">Sorcerer</option>
+										<option value="./warlock.png">Warlock</option>
+										<option value="./wizard.png">Wizard</option>
+								</select>
+
+								<div class="pc_input_field">
+									<label for="name">Name</label>
+									<input type="text" id="name" name="name" placeholder="Thorin" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="race">Race</label>
+									<input type="text" id="race" name="race" placeholder="Dwarf" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="level">Level</label>
+									<input type="number" id="level" name="level" placeholder="25" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="Age">Age</label>
+									<input type="number" id="age" name="age" placeholder="125" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="maxMana">Max Mana</label>
+									<input type="number" id="maxMana" name="maxMana" placeholder="45" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="hpMax">HP Max</label>
+									<input type="number" id="hpMax" name="hpMax" placeholder="45" required>
+								</div>
+								<h3>Ability Scores</h3>
+
+								<div class="pc_input_field">
+									<label for="Str">Str</label>
+									<input type="number" id="str" name="ability1" placeholder="+3 +2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Dex">Dex</label>
+									<input type="number" id="dex" name="ability2" placeholder="+2 +1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Con">Con</label>
+									<input type="number" id="con" name="ability3" placeholder="+4 +2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Int">Intel</label>
+									<input type="number" id="int" name="ability4" placeholder="+1 +0" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Wis">Wis</label>
+									<input type="number" id="wis" name="ability5" placeholder="+2 +1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Cha">Cha</label>
+									<input type="number" id="cha" name="ability6" placeholder="+0 -1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="speed">speed</label>
+									<input type="number" id="speed" name="speed" placeholder="30" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="save">Spell Save DC</label>
+									<input type="text" id="save" name="save" placeholder="+3" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="prof_bonus">Prof Bonus</label>
+									<input type="number" id="prof_bonus" name="prof_bonus" placeholder="+3" required>
+								</div>
+								<h3>Combat</h3>
+								<div class="pc_input_field">
+									<label for="AC">AC</label>
+									<input type="number" id="ac" name="ac" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Magic ATT">Magic ATK</label>
+									<input type="number" id="magic_atk" name="magic_atk" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Main ATT">Main ATK</label>
+									<input type="number" id="mainAtt" name="attack1" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Main DMG">Main DMG</label>
+									<input type="text" id="mainDmg" name="damage1" placeholder="1d8+3" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Special1">Special1</label>
+									<input type="text" id="Special1" name="Special1" placeholder="+2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Special2">Special2</label>
+									<input type="text" id="Special2" name="Special2" placeholder="1d6+1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="hp">HP</label>
+									<input type="number" id="hp" name="hp" placeholder="150" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="mana">Mana</label>
+									<input type="number" id="mana" name="mana" placeholder="30" required>
+								</div>
+								<br />
+								<div class="pc_input_field">
+									<button type="button" onclick="generateCommand('player2')">Generate Command</button>
+									<button type="button" onclick="display('player2')">Display</button>
+									<select id="eink_selector" name="eink_selector" required>
+										<option value="">Select a eink</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="0">0</option>
+									</select>
+								</div>
+							</form>
+						</div>
+						<div class="image-container">
+							<img id="player2generatedImage" src="ttrpg/monk.png" alt="Generated Player Card">
+							<h4 id="player2commandDisplay">current command</h4>
+							<h4 id="player2progessUpload">Not currently Uploading</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="player-entry" id="player3">
+				<div class="entry-header">
+					<h2>Player: </h2>
+					<input type="text" id="PlayerName" name="PlayerName" placeholder="Guy" required>
+					<button class="collapse-btn">Expand</button>
+				</div>
+				<div class="entry-content">
+					<div class="container">
+						<div class="form-container">
+							<form class="playerCardForm" id="playerCardForm3">
+
+								<select id="template" name="template" required>
+									<option value="" disabled selected>Select a template</option>
+										<option value="./barbarain.png">Barbarain</option>
+										<option value="./bard.png">Bard</option>
+										<option value="./rogue.png">Rogue</option>
+										<option value="./cleric.png">Cleric</option>
+										<option value="./druid.png">Druid</option>
+										<option value="./fighter.png">Fighter</option>
+										<option value="./monk.png">Monk</option>
+										<option value="./paladin.png">Paladin</option>
+										<option value="./ranger.png">Ranger</option>
+										<option value="./sorcerer.png">Sorcerer</option>
+										<option value="./warlock.png">Warlock</option>
+										<option value="./wizard.png">Wizard</option>
+								</select>
+
+								<div class="pc_input_field">
+									<label for="name">Name</label>
+									<input type="text" id="name" name="name" placeholder="Thorin" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="race">Race</label>
+									<input type="text" id="race" name="race" placeholder="Dwarf" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="level">Level</label>
+									<input type="number" id="level" name="level" placeholder="25" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="Age">Age</label>
+									<input type="number" id="age" name="age" placeholder="125" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="maxMana">Max Mana</label>
+									<input type="number" id="maxMana" name="maxMana" placeholder="45" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="hpMax">HP Max</label>
+									<input type="number" id="hpMax" name="hpMax" placeholder="45" required>
+								</div>
+								<h3>Ability Scores</h3>
+
+								<div class="pc_input_field">
+									<label for="Str">Str</label>
+									<input type="number" id="str" name="ability1" placeholder="+3 +2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Dex">Dex</label>
+									<input type="number" id="dex" name="ability2" placeholder="+2 +1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Con">Con</label>
+									<input type="number" id="con" name="ability3" placeholder="+4 +2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Int">Intel</label>
+									<input type="number" id="int" name="ability4" placeholder="+1 +0" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Wis">Wis</label>
+									<input type="number" id="wis" name="ability5" placeholder="+2 +1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Cha">Cha</label>
+									<input type="number" id="cha" name="ability6" placeholder="+0 -1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="speed">speed</label>
+									<input type="number" id="speed" name="speed" placeholder="30" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="save">Spell Save DC</label>
+									<input type="text" id="save" name="save" placeholder="+3" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="prof_bonus">Prof Bonus</label>
+									<input type="number" id="prof_bonus" name="prof_bonus" placeholder="+3" required>
+								</div>
+								<h3>Combat</h3>
+								<div class="pc_input_field">
+									<label for="AC">AC</label>
+									<input type="number" id="ac" name="ac" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Magic ATT">Magic ATK</label>
+									<input type="number" id="magic_atk" name="magic_atk" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Main ATT">Main ATK</label>
+									<input type="number" id="mainAtt" name="attack1" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Main DMG">Main DMG</label>
+									<input type="text" id="mainDmg" name="damage1" placeholder="1d8+3" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Special1">Special1</label>
+									<input type="text" id="Special1" name="Special1" placeholder="+2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Special2">Special2</label>
+									<input type="text" id="Special2" name="Special2" placeholder="1d6+1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="hp">HP</label>
+									<input type="number" id="hp" name="hp" placeholder="150" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="mana">Mana</label>
+									<input type="number" id="mana" name="mana" placeholder="30" required>
+								</div>
+								<br />
+								<div class="pc_input_field">
+									<button type="button" onclick="generateCommand('player3')">Generate Command</button>
+									<button type="button" onclick="display('player3')">Display</button>
+									<select id="eink_selector" name="eink_selector" required>
+										<option value="">Select a eink</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="0">0</option>
+									</select>
+								</div>
+							</form>
+						</div>
+						<div class="image-container">
+							<img id="player3generatedImage" src="ttrpg/ranger.png" alt="Generated Player Card">
+							<h4 id="player3commandDisplay">current command</h4>
+							<h4 id="player3progessUpload">Not currently Uploading</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="player-entry" id="player4">
+				<div class="entry-header">
+					<h2>Player: </h2>
+					<input type="text" id="PlayerName" name="PlayerName" placeholder="Guy" required>
+					<button class="collapse-btn">Expand</button>
+				</div>
+				<div class="entry-content">
+					<div class="container">
+						<div class="form-container">
+							<form class="playerCardForm" id="playerCardForm4">
+								<select id="template" name="template" required>
+									<option value="" disabled selected>Select a template</option>
+										<option value="./barbarain.png">Barbarain</option>
+										<option value="./bard.png">Bard</option>
+										<option value="./rogue.png">Rogue</option>
+										<option value="./cleric.png">Cleric</option>
+										<option value="./druid.png">Druid</option>
+										<option value="./fighter.png">Fighter</option>
+										<option value="./monk.png">Monk</option>
+										<option value="./paladin.png">Paladin</option>
+										<option value="./ranger.png">Ranger</option>
+										<option value="./sorcerer.png">Sorcerer</option>
+										<option value="./warlock.png">Warlock</option>
+										<option value="./wizard.png">Wizard</option>
+								</select>
+
+								<div class="pc_input_field">
+									<label for="name">Name</label>
+									<input type="text" id="name" name="name" placeholder="Thorin" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="race">Race</label>
+									<input type="text" id="race" name="race" placeholder="Dwarf" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="level">Level</label>
+									<input type="number" id="level" name="level" placeholder="25" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="Age">Age</label>
+									<input type="number" id="age" name="age" placeholder="125" required>
+								</div>
+
+								<div class="pc_input_field">
+									<label for="maxMana">Max Mana</label>
+									<input type="number" id="maxMana" name="maxMana" placeholder="45" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="hpMax">HP Max</label>
+									<input type="number" id="hpMax" name="hpMax" placeholder="45" required>
+								</div>
+								<h3>Ability Scores</h3>
+
+								<div class="pc_input_field">
+									<label for="Str">Str</label>
+									<input type="number" id="str" name="ability1" placeholder="+3 +2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Dex">Dex</label>
+									<input type="number" id="dex" name="ability2" placeholder="+2 +1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Con">Con</label>
+									<input type="number" id="con" name="ability3" placeholder="+4 +2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Int">Intel</label>
+									<input type="number" id="int" name="ability4" placeholder="+1 +0" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Wis">Wis</label>
+									<input type="number" id="wis" name="ability5" placeholder="+2 +1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Cha">Cha</label>
+									<input type="number" id="cha" name="ability6" placeholder="+0 -1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="speed">speed</label>
+									<input type="number" id="speed" name="speed" placeholder="30" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="save">Spell Save DC</label>
+									<input type="text" id="save" name="save" placeholder="+3" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="prof_bonus">Prof Bonus</label>
+									<input type="number" id="prof_bonus" name="prof_bonus" placeholder="+3" required>
+								</div>
+								<h3>Combat</h3>
+								<div class="pc_input_field">
+									<label for="AC">AC</label>
+									<input type="number" id="ac" name="ac" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Magic ATT">Magic ATK</label>
+									<input type="number" id="magic_atk" name="magic_atk" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Main ATT">Main ATK</label>
+									<input type="number" id="mainAtt" name="attack1" placeholder="+4" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Main DMG">Main DMG</label>
+									<input type="text" id="mainDmg" name="damage1" placeholder="1d8+3" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Special1">Special1</label>
+									<input type="text" id="Special1" name="Special1" placeholder="+2" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="Special2">Special2</label>
+									<input type="text" id="Special2" name="Special2" placeholder="1d6+1" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="hp">HP</label>
+									<input type="number" id="hp" name="hp" placeholder="150" required>
+								</div>
+								<div class="pc_input_field">
+									<label for="mana">Mana</label>
+									<input type="number" id="mana" name="mana" placeholder="30" required>
+								</div>
+								<br />
+								<div class="pc_input_field">
+									<button type="button" onclick="generateCommand('player4')">Generate Command</button>
+									<button type="button" onclick="display('player4')">Display</button>
+									<select id="eink_selector" name="eink_selector" required>
+										<option value="">Select a eink</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="0">0</option>
+									</select>
+								</div>
+							</form>
+						</div>
+						<div class="image-container">
+							<img id="player4generatedImage" src="ttrpg/sorcerer.png" alt="Generated Player Card">
+							<h4 id="player4commandDisplay">current command</h4>
+							<h4 id="player4progessUpload">Not currently Uploading</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="front-end/js/pc_sheets.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

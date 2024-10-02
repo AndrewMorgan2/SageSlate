@@ -1,0 +1,84 @@
+Bardarain
+{
+"str": 15, "dex": 13, "con": 14, "int": 8, "wis": 12, "cha": 10,
+"speed": 30, "level": 2, "Special1": 2,
+"mainAtt": "str", "mainDmg": "1d12", "Special2": 0, "magic_atk": 0, "ac": 14,
+"hpMax": 27, "maxMana": 0, "hp": 27, "mana": 0, "save": "str,con", "prof_bonus": 2
+}
+Bard{
+"str": 8, "dex": 14, "con": 13, "int": 12, "wis": 10, "cha": 15,
+"speed": 30, "level": 2, "Special1": 2,
+"mainAtt": "cha", "mainDmg": "1d6", "Special2": 0, "magic_atk": 4, "ac": 13,
+"hpMax": 17, "maxMana": 4, "hp": 17, "mana": 4, "save": "dex,cha", "prof_bonus": 2
+}
+Cleric
+{
+"str": 14, "dex": 8, "con": 13, "int": 10, "wis": 15, "cha": 12,
+"speed": 30, "level": 2, "Special1": 1,
+"mainAtt": "wis", "mainDmg": "1d8", "Special2": 0, "magic_atk": 4, "ac": 18,
+"hpMax": 19, "maxMana": 4, "hp": 19, "mana": 4, "save": "wis,cha", "prof_bonus": 2
+}
+Druid
+{
+"str": 10, "dex": 13, "con": 14, "int": 12, "wis": 15, "cha": 8,
+"speed": 30, "level": 2, "Special1": 2,
+"mainAtt": "wis", "mainDmg": "1d6", "Special2": 0, "magic_atk": 4, "ac": 14,
+"hpMax": 19, "maxMana": 4, "hp": 19, "mana": 4, "save": "int,wis", "prof_bonus": 2
+}
+Fighter
+{
+"str": 15, "dex": 13, "con": 14, "int": 10, "wis": 12, "cha": 8,
+"speed": 30, "level": 2, "Special1": 1,
+"mainAtt": "str", "mainDmg": "1d8", "Special2": 0, "magic_atk": 0, "ac": 18,
+"hpMax": 22, "maxMana": 0, "hp": 22, "mana": 0, "save": "str,con", "prof_bonus": 2
+}
+Monk
+{
+"str": 8, "dex": 15, "con": 13, "int": 12, "wis": 14, "cha": 10,
+"speed": 40, "level": 2, "Special1": 2,
+"mainAtt": "dex", "mainDmg": "1d4", "Special2": 0, "magic_atk": 0, "ac": 15,
+"hpMax": 17, "maxMana": 2, "hp": 17, "mana": 2, "save": "str,dex", "prof_bonus": 2
+}
+Paladin
+{
+"str": 15, "dex": 10, "con": 13, "int": 8, "wis": 12, "cha": 14,
+"speed": 30, "level": 2, "Special1": 2,
+"mainAtt": "str", "mainDmg": "1d8", "Special2": 0, "magic_atk": 3, "ac": 18,
+"hpMax": 22, "maxMana": 2, "hp": 22, "mana": 2, "save": "wis,cha", "prof_bonus": 2
+}
+Ranger
+{
+"str": 10, "dex": 15, "con": 14, "int": 12, "wis": 13, "cha": 8,
+"speed": 30, "level": 2, "Special1": 2,
+"mainAtt": "dex", "mainDmg": "1d8", "Special2": 0, "magic_atk": 3, "ac": 15,
+"hpMax": 22, "maxMana": 2, "hp": 22, "mana": 2, "save": "str,dex", "prof_bonus": 2
+}
+Rogue
+{
+"str": 8, "dex": 15, "con": 13, "int": 12, "wis": 10, "cha": 14,
+"speed": 30, "level": 2, "Special1": 1,
+"mainAtt": "dex", "mainDmg": "1d6", "Special2": 0, "magic_atk": 0, "ac": 14,
+"hpMax": 17, "maxMana": 0, "hp": 17, "mana": 0, "save": "dex,int", "prof_bonus": 2
+}
+Sorcerer
+{
+"str": 8, "dex": 13, "con": 14, "int": 12, "wis": 10, "cha": 15,
+"speed": 30, "level": 2, "Special1": 3,
+"mainAtt": "cha", "mainDmg": "1d10", "Special2": 2, "magic_atk": 4, "ac": 13,
+"hpMax": 15, "maxMana": 4, "hp": 15, "mana": 4, "save": "con,cha", "prof_bonus": 2
+}
+Warlock
+{
+"str": 8, "dex": 13, "con": 14, "int": 12, "wis": 10, "cha": 15,
+"speed": 30, "level": 2, "Special1": 2,
+"mainAtt": "cha", "mainDmg": "1d10", "Special2": 0, "magic_atk": 4, "ac": 13,
+"hpMax": 17, "maxMana": 2, "hp": 17, "mana": 2, "save": "wis,cha", "prof_bonus": 2
+}
+Wizard
+{
+"str": 8, "dex": 13, "con": 14, "int": 15, "wis": 12, "cha": 10,
+"speed": 30, "level": 2, "Special1": 0,
+"mainAtt": "int", "mainDmg": "1d10", "Special2": 0, "magic_atk": 4, "ac": 13,
+"hpMax": 15, "maxMana": 4, "hp": 15, "mana": 4, "save": "int,wis", "prof_bonus": 2
+}
+▊

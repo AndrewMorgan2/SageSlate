@@ -1,0 +1,8 @@
+Log started at 2024-08-03 21:23:41.404268
+[2024-08-03 21:23:41] 44938
+[2024-08-03 21:23:41] Attempt 1
+[2024-08-03 21:23:54] Sent SEND_TOTAL command, we want 29719 (magic number)
+[2024-08-03 21:23:54] 14770
+[2024-08-03 21:23:54] Received response: 14770
+[2024-08-03 21:23:54] Incorrect response. Retrying...
+[2024-08-03 21:23:56] Max attempts (1) reached. Exiting.

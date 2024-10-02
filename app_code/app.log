@@ -1,0 +1,7 @@
+Log started at 2024-09-28 13:43:48.167056
+[2024-09-28 13:43:48] 44938
+[2024-09-28 13:43:48] Attempt 1
+[2024-09-28 13:44:04] Sent SEND_TOTAL command, we want 14770 (magic number)
+[2024-09-28 13:44:04] 14770
+[2024-09-28 13:44:04] Received response: 14770
+[2024-09-28 13:44:04] Correct response received. Exiting.

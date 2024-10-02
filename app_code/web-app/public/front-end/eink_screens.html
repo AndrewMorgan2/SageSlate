@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Draw Pro</title>
+	<link rel="stylesheet" href="front-end/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+	<div class="title-bar">
+		<img src="front-end/logo.png" width="100vw" style="float: left;">
+		<h3 style="align-content: center;">Behind the Screen</h3>
+		<div class="window-controls">
+			<button id="Draw">Draw</button>
+			<button id="Generate">Generate</button>
+			<button id="Screen">Screen</button>
+			<button id="Combat">Combat</button>
+			<button id="Eink">Eink</button>
+			<button id="CharacterSheets">Character Sheets</button>
+		</div>
+	</div>
+	<script src="front-end/js/basics.js" type="text/javascript" charset="utf-8"></script>
+
+	<div>
+		<div class="custom-eink-file-input">
+			<!-- WIP <label for="folderSelector">Choose Folder</label>
+			<input type="file" id="folderSelector"> -->
+			<h3 id="credit_text" style="display: inline-flex; color: #ccc;">/home/jp19050/Github/TTRPG/DnD_Images/eink_images/resized</h3>
+		</div>
+	  </div>
+	</div>
+	<div class="content-wrapper">
+        <div class="left-column">
+			<div class="file-list">
+				<h2>Files</h2>
+				<ul id="files"></ul>
+			</div>
+
+			<!-- <div class="controls">
+				<div class="custom-file-input">
+					<label for="imageSelector">Choose File</label>
+					<input type="file" id="imageSelector">
+				</div>
+			</div> -->
+		</div>
+		<div class="left-column">
+			<img id="imagePreview" alt="Selected Image Preview" src="/external/Red_dragon.png">
+		</div>
+	</div>
+
+	<div class="controls">
+		<button style="display: inline-flex;" class="button" id="displayImage" onclick="display()">Display</button>
+		<select id="eink_selector" name="eink_selector" required>
+			<option value="">Select a eink</option>
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select>
+		<h3 id="selected_image_path">Nothing Selected</h3>
+		<h3 id="upload_status">Not currently uploading</h3>
+	</div>
+	<script src="front-end/js/eink.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

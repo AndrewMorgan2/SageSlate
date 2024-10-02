@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Draw Pro</title>
+        <link rel="stylesheet" href="front-end/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body>
+        <div class="title-bar">
+                <img src="front-end/logo.png" width="100vw" style="float: left;">
+                <h3 style="align-content: center;">Behind the Screen</h3>
+                <div class="window-controls">
+                        <button id="Draw">Draw</button>
+                        <button id="Generate">Generate</button>
+                        <button id="Screen">Screen</button>
+                        <button id="Combat">Combat</button>
+                        <button id="Eink">Eink</button>
+                        <button id="CharacterSheets">Character Sheets</button>
+                </div>
+        </div>
+        <script src="front-end/js/basics.js" type="text/javascript" charset="utf-8"></script>
+        <div id="imageContainer"></div>
+        <div class="directory-container">
+                <div class="parent-folder">
+                        <button class="button" style="display: inline-flex;" id="display">Display Main</button>
+                        <ul id="parentFolders">
+                        </ul>
+                </div>
+                <div class="directory-list">
+                        <h2>Folders</h2>
+                        <ul id="folders"></ul>
+                </div>
+                <div class="file-list">
+                        <h2>Files</h2>
+                        <ul id="files"></ul>
+                </div>
+        </div>
+        <script src="front-end/js/screen.js"></script>
+
+</body>
+
+</html>
